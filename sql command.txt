@@ -1,0 +1,125 @@
+All SQL Command 
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+-- create table staff(
+-- 	staff_id int auto_increment primary key,
+--     name varchar(50) not null,
+--     age int not null,
+--     phone bigint,
+--     salary float
+-- );
+-- select *from staff;
+
+-- insert into staff(name, age, phone, salary)
+-- values('Shiva Kumar Limbu', 23, 9818647289, 75000),
+-- ('Raj Manandhar', 22, 98154275, 35000),
+-- ('Sruti Shrestha', 21, 98451321, 15000),
+-- ('Yangji Lama', 20, 9845152536, 45000),
+-- ('Yogesh Bhattarai', 28, 9845152536, 60000)
+
+-- insert into staff(name, age, phone, salary)
+-- values('Yangji Sherpa', 21, 9818649689, 25000),
+-- ('Yangji Tamang', 19, 9818647689, 35000),
+-- ('Yogesh Bhatta', 21, 9818649689, 25000)
+
+
+
+-- select name, salary from staff;
+
+-- select distinct(name) from staff;
+-- select *from staff where staff_id = 1;
+
+-- select name from staff where staff_id = 1
+
+-- select name from staff where age = 21;
+
+-- update staff set age = 20 where staff_id = 7;
+
+-- select *from staff where age = 20;
+-- select name from staff where age = 20;
+-- select *from staff;
+
+-- select *from staff where age>25 and salary>50000
+-- select *from staff where salary != 60000
+
+-- select *from staff where age>20 or salary < 40000
+
+-- select *from staff order by name desc;
+-- select *from staff order by name
+
+-- delete from staff where staff_id = 2;
+
+-- select *from staff limit 3 --it show only first three data 
+
+-- select *from staff order by staff_id desc limit 3 --  --it show only last three data  
+
+-- select max(age) from staff;
+-- select name from staff where age = 28;
+-- select *from staff where age = 28; -- which is maximum age among the staff table 
+-- select min(age), name, phone from staff;
+
+
+-- -- select count(staff_id) from staff; it show the total data of table
+-- select count(name) from staff;
+
+-- select avg(salary) from staff; it show the average of all salary
+
+-- select sum(salary) from staff; it adds all the salary data from table
+
+-- select *from staff where name like 's%'   it search from name started from begginning index 's'
+
+-- select *from staff where name like '%a';  it search from name started from last index 'a'
+
+
+-- creating and learning primary key and foreign key 
+
+
+-- create table students(
+-- 	student_id int auto_increment,
+--     name varchar(100),
+--     age int,
+--     address varchar(500),
+-- 	primary key (student_id)
+-- );
+
+-- insert into students(name, age, address)
+-- values('Shibu Subba', 21, null)
+-- update students set address = "Gopikrishnanagar kathamandu" where student_id = 1;
+-- select *from students
+
+-- insert into students(name, age, address)
+-- values('Ramesh Khada', null,'Kathmandu'),
+-- (null, 25, 'Dharan'),
+-- ('Priya Subba', null, 'Pokhara'),
+-- ('Preeti Limbu', 20, null)
+
+-- select *from students
+-- select *from students where address = null
+-- select *from students where age is null
+-- select *from students where age is not null
+-- select *from students where address is not null
+-- update students set address = "" where student_id = 2
+-- select *from students;
+
+
+-- creating foreign key
+
+-- create table contact(
+-- 	contact_id int auto_increment,
+--     phone varchar(10),
+--     student_id int,
+--     primary key(contact_id),
+--     foreign key(student_id) references students(student_id)
+-- );
+
+-- insert into contact(phone)
+-- values('9854256415', '84589565')
+-- delete from contact where contact_id = 2
+-- select *from contact;
+ 
+select phone from contact where contact_id = 1
+
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
